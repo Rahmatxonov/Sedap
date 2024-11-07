@@ -5,3 +5,19 @@
 body {
   background-color: #eeecfe99;
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00bf46;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #058935;
+}
