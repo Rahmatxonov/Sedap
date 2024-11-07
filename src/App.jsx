@@ -17,7 +17,7 @@ import NotFound from './pages/not-found/NotFound';
 
 const App = () => {
   return (
-    <div className="flex h-screen ">
+    <div className="flex h-screen  ">
       <Sidebar />
 
       <div className="flex-1 flex-col flex-grow">
