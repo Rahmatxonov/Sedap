@@ -1,4 +1,3 @@
-import './OrderList.css';
 import React, { useState } from 'react';
 
 const orders = [
@@ -16,8 +15,6 @@ const orders = [
   { id: '#565242', date: '28 March 2020', name: 'John Wickerman', location: '12 Chelsea Road London', amount: '$876.56', status: 'New Order' }
 ];
 
-
-
 const OrderList = () => {
   const [showMenu, setShowMenu] = useState(null);
 
@@ -26,54 +23,60 @@ const OrderList = () => {
   };
 
   return (
-    <div className="order-list">
-      <h1>Your Orders</h1>
-      <h4>This is your order </h4>
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-2">Your Orders</h1>
+      <h4 className="text-gray-600 mb-4">This is your order</h4>
 
-      <table>
+      <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
         <thead>
-          <tr>
-            <th>Order ID</th>
-            <th>Date</th>
-            <th>Customer Name</th>
-            <th>Location</th>
-            <th>Amount</th>
-            <th>Status Order</th>
-            <th>Actions</th>
+          <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+            <th className="py-3 px-6 text-left">Order ID</th>
+            <th className="py-3 px-6 text-left">Date</th>
+            <th className="py-3 px-6 text-left">Customer Name</th>
+            <th className="py-3 px-6 text-left">Location</th>
+            <th className="py-3 px-6 text-left">Amount</th>
+            <th className="py-3 px-6 text-left" >Status</th>
+            <th className="py-3 px-6 text-left">Actions</th>
           </tr>
         </thead>
-        <tbody>
-          {orders.map((order) => {
-            return (
-              <tr key={order.id}>
-                <td>{order.id}</td>
-                <td>{order.date}</td>
-                <td>{order.name}</td>
-                <td>{order.location}</td>
-                <td>{order.amount}</td>
-                <td className={`status ${order.status.toLowerCase().replace(" ", "-")}`}>
-                  {order.status}
-                </td>
+        <tbody className="text-gray-700 text-sm font-light">
+          {orders.map((order) => (
+            <tr key={order.id} className="border-b border-gray-200 hover:bg-gray-100">
+              <td className="py-3 px-6 text-left whitespace-nowrap">{order.id}</td>
+              <td className="py-3 px-6 text-left">{order.date}</td>
+              <td className="py-3 px-6 text-left">{order.name}</td>
+              <td className="py-3 px-6 text-left">{order.location}</td>
+              <td className="py-3 px-6 text-left">{order.amount}</td>
+              <td
+                className={`py-1 px-3 text-xs h-[2px] text-center rounded ${order.status === 'New Order'
+                    ? 'text-red-600 bg-red-100'
+                    : order.status === 'On Delivery'
+                      ? 'text-blue-600 bg-blue-100'
+                      : 'text-green-600 bg-green-100'
+                  }`}
+              >
+                {order.status}
+              </td>
 
 
-                <td>
-                  <div
-                    className="action-container"
-                    onMouseEnter={() => setShowMenu(order.id)}  // Menyu faqat shu buyurtma uchun ochiladi
-                    onMouseLeave={() => setShowMenu(null)}     // Menyu boshqa buyurtma ustiga o'tganda yopiladi
-                  >
-                    <button className="menu-button">...</button>
-                    {showMenu === order.id && (
-                      <div className="dropdown-menu">
-                        <button className="dropdown-button" onClick={() => alert('Accepted Order')}>Accept Order</button>
-                        <button className="dropdown-button" onClick={() => alert('Rejected Order')}>Reject Order</button>
-                      </div>
-                    )}
-                  </div>
-                </td>
-              </tr>
-            );
-          })}
+
+              <td className="py-3 px-6 text-left">
+                <div
+                  className="relative inline-block"
+                  onMouseEnter={() => setShowMenu(order.id)}
+                  onMouseLeave={() => setShowMenu(null)}
+                >
+                  <button className="text-gray-600 hover:text-gray-900">...</button>
+                  {showMenu === order.id && (
+                    <div className="absolute right-0 mt-30 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
+                      <button className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100" onClick={() => alert('Accept Order')}>Accept Order</button>
+                      <button className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100" onClick={() => alert('Reject Order')}>Reject Order</button>
+                    </div>
+                  )}
+                </div>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
