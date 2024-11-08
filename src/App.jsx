@@ -17,13 +17,11 @@ import NotFound from './pages/not-found/NotFound';
 
 const App = () => {
   return (
-    <div className="flex h-screen  ">
+    <div className="flex">
       <Sidebar />
-
-      <div className="flex-1 flex-col flex-grow">
+      <div className="flex-1 ml-[320px] flex flex-col">
         <Panel />
-
-        <div className="flex-1 overflow-y-auto mt-5">
+        <div className="flex-1 h-screen overflow-y-scroll mt-5">
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/order-list" element={<OrderList />} />

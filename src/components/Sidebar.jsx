@@ -15,7 +15,7 @@ import { CiWallet } from 'react-icons/ci';
 import User from '../assets/icons/user.svg';
 const Sidebar = () => {
   return (
-    <div className="h-[100vh] overflow-y-scroll w-[320px] bg-white shadow-lg flex flex-col justify-between">
+    <div className="h-screen overflow-y-scroll w-[320px] fixed top-0 left-0 bg-white shadow-lg flex flex-col justify-between">
       <div className="p-6">
         <h1 className="text-2xl font-bold text-gray-800">Sedap</h1>
         <p className="text-gray-400 text-sm mt-1">Modern Admin Dashboard</p>
