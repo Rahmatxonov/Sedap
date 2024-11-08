@@ -23,7 +23,7 @@ const App = () => {
         <Panel />
         <div className="flex-1 h-screen overflow-y-scroll mt-5">
           <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/order-list" element={<OrderList />} />
             <Route path="/order-detail" element={<OrderDetail />} />
             <Route path="/customer" element={<Customer />} />

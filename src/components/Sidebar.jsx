@@ -22,7 +22,7 @@ const Sidebar = () => {
       </div>
       <nav className="flex-1 px-6 space-y-3">
         <NavLink
-          to="/dashboard"
+          to="/"
           className={({ isActive }) =>
             `flex items-center p-2 rounded-lg ${
               isActive
