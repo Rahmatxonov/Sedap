@@ -24,8 +24,17 @@ const OrderList = () => {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-2">Your Orders</h1>
-      <h4 className="text-gray-600 mb-4">This is your order</h4>
+      <div className="flex items-center justify-between mb-6">
+        <div>
+          <h1 className="text-2xl font-bold">Your Orders</h1>
+          <h4 className="text-gray-600">This is your order</h4>
+        </div>
+        <div className="flex items-center space-x-4">
+          <button className="px-4 py-2 bg-green-600 text-white rounded-md">All Status</button>
+          <button className="px-4 py-2 bg-gray-200 text-gray-600 rounded-md">Today</button>
+        </div>
+      </div>
+
 
       <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
         <thead>
@@ -48,15 +57,16 @@ const OrderList = () => {
               <td className="py-3 px-6 text-left">{order.location}</td>
               <td className="py-3 px-6 text-left">{order.amount}</td>
               <td
-                className={`py-1 px-3 text-xs h-[2px] text-center rounded ${order.status === 'New Order'
-                    ? 'text-red-600 bg-red-100'
-                    : order.status === 'On Delivery'
-                      ? 'text-blue-600 bg-blue-100'
-                      : 'text-green-600 bg-green-100'
+                className={`py-1 px-3 text-xs text-center rounded ${order.status === 'New Order'
+                  ? 'text-red-600 bg-red-100'
+                  : order.status === 'On Delivery'
+                    ? 'text-blue-600 bg-blue-100'
+                    : 'text-green-600 bg-green-100'
                   }`}
               >
                 {order.status}
               </td>
+
 
 
 
@@ -66,7 +76,7 @@ const OrderList = () => {
                   onMouseEnter={() => setShowMenu(order.id)}
                   onMouseLeave={() => setShowMenu(null)}
                 >
-                  <button className="text-gray-600 hover:text-gray-900">...</button>
+                  <button className="text-gray-600 hover:text-gray-900 ml-8 text-xl">...</button>
                   {showMenu === order.id && (
                     <div className="absolute right-0 mt-30 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
                       <button className="block w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100" onClick={() => alert('Accept Order')}>Accept Order</button>
