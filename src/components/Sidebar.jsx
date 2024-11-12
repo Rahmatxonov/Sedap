@@ -13,12 +13,17 @@ import { CiCalendar } from 'react-icons/ci';
 import { IoChatboxEllipsesOutline } from 'react-icons/io5';
 import { CiWallet } from 'react-icons/ci';
 import User from '../assets/icons/user.svg';
-const Sidebar = () => {
+
+const Sidebar = ({ isDarkMode }) => {
   return (
-    <div className="h-screen overflow-y-scroll w-[320px] fixed top-0 left-0 bg-white shadow-lg flex flex-col justify-between">
+    <div
+      className={`h-screen overflow-y-scroll w-[320px] fixed top-0 left-0 ${
+        isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-800'
+      } shadow-lg flex flex-col justify-between`}
+    >
       <div className="p-6">
-        <h1 className="text-2xl font-bold text-gray-800">Sedap</h1>
-        <p className="text-gray-400 text-sm mt-1">Modern Admin Dashboard</p>
+        <h1 className="text-2xl font-bold">Sedap</h1>
+        <p className="text-sm mt-1">Modern Admin Dashboard</p>
       </div>
       <nav className="flex-1 px-6 space-y-3">
         <NavLink
@@ -177,21 +182,21 @@ const Sidebar = () => {
           Wallet
         </NavLink>
       </nav>
-      <div className="p-6 bg-white">
+      <div className="p-6">
         <div className="flex items-center justify-between bg-green-500 text-white p-4 rounded-lg mb-4">
           <div>
-            <p>Please, organize your menus through button below!</p>
+            <p>Please, organize your menus through the button below!</p>
             <button className="mt-2 bg-white text-green-500 font-bold py-2 px-4 rounded-lg">
               +Add Menus
             </button>
           </div>
           <img src={User} alt="user" />
         </div>
-        <p className="text-xs text-gray-400 text-center">
+        <p className="text-xs text-center">
           Sedap Restaurant Admin Dashboard <br /> &copy; 2020 All Rights
           Reserved
         </p>
-        <p className="text-center text-xs text-gray-400 mt-2">
+        <p className="text-center text-xs mt-2">
           Made with <span className="text-red-500">❤️</span> by Peterdraw
         </p>
       </div>
