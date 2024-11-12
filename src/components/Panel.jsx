@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {
   FaBell,
   FaEnvelope,
@@ -10,14 +10,7 @@ import {
 import { AiOutlineSearch } from 'react-icons/ai';
 import Sidebar from './Sidebar'; // Assuming you have a Sidebar component
 
-const Panel = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    document.body.classList.toggle('dark', !isDarkMode);
-  };
-
+const Panel = ({ isDarkMode, toggleDarkMode }) => {
   useEffect(() => {
     if (isDarkMode) {
       document.body.classList.add('dark');
@@ -33,7 +26,7 @@ const Panel = () => {
       <div className="flex-1">
         <div
           className={`flex items-center justify-between p-4 shadow-sm ${
-            isDarkMode ? 'bg-gray-900' : 'bg-white'
+            isDarkMode ? 'bg-gray-900' : 'bg-[#faf6ff]'
           } transition-colors duration-300`}
         >
           <div
