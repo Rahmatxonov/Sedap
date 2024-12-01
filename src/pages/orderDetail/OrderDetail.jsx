@@ -1,29 +1,49 @@
-import React from "react";
-import { IoIosArrowDown } from "react-icons/io";
-import { TbTruckDelivery } from "react-icons/tb";
-import items from "./itemsGeneric";
-import { CiStar } from "react-icons/ci";
-import { TiDeleteOutline } from "react-icons/ti";
-import { MdOutlineLocalPhone } from "react-icons/md";
+import React from 'react';
+import { IoIosArrowDown } from 'react-icons/io';
+import { TbTruckDelivery } from 'react-icons/tb';
+import items from './itemsGeneric';
+import { CiStar } from 'react-icons/ci';
+import { TiDeleteOutline } from 'react-icons/ti';
+import { MdOutlineLocalPhone } from 'react-icons/md';
 
-const OrderDetail = () => {
+const OrderDetail = ({ isDarkMode }) => {
   return (
-    <div className="px-4">
+    <div
+      className={`px-4 ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-white'}`}
+    >
       <div className="flex justify-between items-center">
         <div>
-          <span className="font-barlow text-[32px] leading-[38.4px] font-semibold">
+          <span
+            className={`font-barlow text-[32px] leading-[38.4px] font-semibold ${
+              isDarkMode ? 'text-white' : 'text-black'
+            }`}
+          >
             Order ID #6515654
           </span>
-          <span className="flex font-barlow font-medium text-[18px] leading-[21.6px] pt-1">
+          <span
+            className={`flex font-barlow font-medium text-[18px] leading-[21.6px] pt-1 ${
+              isDarkMode ? 'text-gray-300' : 'text-gray-500'
+            }`}
+          >
             <p className="text-green-500">Order/</p>
             <p>Order Details</p>
           </span>
         </div>
         <div className="flex font-barlow font-medium gap-3">
-          <button className="border px-6 py-2 text-red-600 border-red-600 rounded-xl">
+          <button
+            className={`border px-6 py-2 ${
+              isDarkMode
+                ? 'text-red-400 border-red-400'
+                : 'text-red-600 border-red-600'
+            } rounded-xl`}
+          >
             Cancel Order
           </button>
-          <button className="flex items-center gap-2 border px-3 py-2 text-white bg-[#01B075] rounded-xl">
+          <button
+            className={`flex items-center gap-2 border px-3 py-2 text-white ${
+              isDarkMode ? 'bg-gray-700' : 'bg-[#01B075]'
+            } rounded-xl`}
+          >
             <TbTruckDelivery />
             On Delivery
             <IoIosArrowDown />
@@ -31,19 +51,33 @@ const OrderDetail = () => {
         </div>
       </div>
 
-      <div className="mt-5 flex gap-4 ">
+      <div className="mt-5 flex gap-4">
         <div className="max-w-[30%] flex-1">
           <div>
-            <div className="flex flex-col items-center rounded-xl rounded-b-none bg-white text-center py-6">
+            <div
+              className={`flex flex-col items-center rounded-xl rounded-b-none ${
+                isDarkMode
+                  ? 'bg-gray-800 text-center py-6'
+                  : 'bg-white text-center py-6'
+              }`}
+            >
               <img
                 className="max-w-[120px] rounded-full"
                 src="https://cdn.pixabay.com/photo/2017/11/10/05/48/user-2935527_640.png"
                 alt="#img_user"
               />
-              <p className="my-2">user name</p>
-              <button>send</button>
+              <p className={`my-2 ${isDarkMode ? 'text-white' : 'text-black'}`}>
+                user name
+              </p>
+              <button className={`${isDarkMode ? 'text-white' : 'text-black'}`}>
+                send
+              </button>
             </div>
-            <div className="bg-[#5E6B96] text-white relative top-[-10px] rounded-xl rounded-b-none py-4 px-5">
+            <div
+              className={`bg-[#5E6B96] text-white relative top-[-10px] rounded-xl rounded-b-none py-4 px-5 ${
+                isDarkMode ? 'bg-gray-700' : ''
+              }`}
+            >
               <span className="font-barlow">Note Order</span>
               <p className="mb-5">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
@@ -51,7 +85,11 @@ const OrderDetail = () => {
                 cumque pariatur minima magnam.
               </p>
             </div>
-            <div className="bg-[#2C9DD9] gap-4 rounded-xl flex items-center relative px-5 py-5 bottom-[20px]">
+            <div
+              className={`bg-[#2C9DD9] gap-4 rounded-xl flex items-center relative px-5 py-5 bottom-[20px] ${
+                isDarkMode ? 'bg-gray-700' : ''
+              }`}
+            >
               <div className="rounded-full p-3 flex items-center justify-center bg-white">
                 <TbTruckDelivery className="text-[30px] text-blue-500" />
               </div>
@@ -61,14 +99,22 @@ const OrderDetail = () => {
               </div>
             </div>
           </div>
-          <div className="  rounded-xl bg-white border h-max">
+          <div className="rounded-xl bg-white border h-max">
             {/* delivery */}
           </div>
         </div>
 
-        <div className="flex-[2] max-w-[70%] ">
-          <table className="table-auto w-full overflow-hidden rounded-xl">
-            <thead className="text-white bg-[#01B075]">
+        <div className="flex-[2] max-w-[70%]">
+          <table
+            className={`table-auto w-full overflow-hidden rounded-xl ${
+              isDarkMode ? 'bg-gray-800 text-white' : 'bg-white'
+            }`}
+          >
+            <thead
+              className={`${
+                isDarkMode ? 'bg-gray-700' : 'bg-[#01B075]'
+              } text-white`}
+            >
               <tr className="rounded-xl">
                 <th className="text-left px-4 py-2">Items</th>
                 <th className="px-4 py-2">Qty</th>
@@ -77,9 +123,9 @@ const OrderDetail = () => {
                 <th className="px-4 py-2"></th>
               </tr>
             </thead>
-            <tbody className="bg-white  ">
+            <tbody className={`${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
               {items.map((item, index) => (
-                <tr key={index} className="border-b ">
+                <tr key={index} className="border-b">
                   <td className="flex gap-4 px-4 py-3">
                     <div>
                       <img
@@ -114,7 +160,11 @@ const OrderDetail = () => {
               ))}
             </tbody>
           </table>
-          <div className="my-5 font-barlow bg-white p-3 rounded-xl ">
+          <div
+            className={`my-5 font-barlow ${
+              isDarkMode ? 'dark:bg-gray-900' : 'bg-white'
+            }  p-3 rounded-xl`}
+          >
             <div className="h-[200px]"></div>
             <div>
               <span>Delivery by </span>
