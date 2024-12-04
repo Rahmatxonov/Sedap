@@ -1,1 +1,7 @@
-// o'zim o'chirib qo'ydim customerni hozircha
+import React from 'react';
+
+const Customer = () => {
+  return <div>Customer</div>;
+};
+
+export default Customer;
