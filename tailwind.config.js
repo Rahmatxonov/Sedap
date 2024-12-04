@@ -7,6 +7,12 @@ export default {
         barlow: ["Barlow", "sans-serif"],
       },
     },
+    container: {
+      center: true,
+      screens: {
+        custom: "1331px",
+      },
+    },
   },
   plugins: [],
 };

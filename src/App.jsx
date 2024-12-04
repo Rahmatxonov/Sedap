@@ -21,12 +21,11 @@ const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(storedDarkMode);
 
   useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add('dark');
-    } else {
-      document.body.classList.remove('dark');
-    }
-
+    // if (isDarkMode) {
+    //   document.body.classList.add('dark');
+    // } else {
+    //   document.body.classList.remove('dark');
+    // }
     localStorage.setItem('isDarkMode', isDarkMode);
   }, [isDarkMode]);
 
