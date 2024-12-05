@@ -2,9 +2,32 @@ import React from "react";
 import { CiCirclePlus } from "react-icons/ci";
 import { GoDotFill } from "react-icons/go";
 import LineChart from "./food-detail-chart";
+import { Rate } from "antd";
 
 const FoodDetail = ({ isDarkMode }) => {
-  console.log(isDarkMode);
+  const cardItems = [
+    {
+      name: "Johnny Ahmad ",
+      comment:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, qui?",
+      img:
+        "https://t4.ftcdn.net/jpg/06/78/09/75/360_F_678097580_mgsNEISedI7fngOwIipYtEU0T6SN8qKv.jpg",
+    },
+    {
+      name: "Maria Vania ",
+      comment:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, qui?",
+      img:
+        "https://t4.ftcdn.net/jpg/06/78/09/75/360_F_678097580_mgsNEISedI7fngOwIipYtEU0T6SN8qKv.jpg",
+    },
+    {
+      name: "Sarah Ahmad ",
+      comment:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, qui?",
+      img:
+        "https://t4.ftcdn.net/jpg/06/78/09/75/360_F_678097580_mgsNEISedI7fngOwIipYtEU0T6SN8qKv.jpg",
+    },
+  ];
   return (
     <div
       className={`${
@@ -57,7 +80,11 @@ const FoodDetail = ({ isDarkMode }) => {
           </div>
 
           <div className="flex items-center space-x-2">
-            <button className="w-8 h-8 flex justify-center items-center bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100">
+            <button
+              className={`w-8 h-8 flex justify-center items-center ${
+                isDarkMode ? "dark:bg-gray-800" : "bg-white"
+              } border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100`}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -66,7 +93,7 @@ const FoodDetail = ({ isDarkMode }) => {
                 stroke="currentColor"
                 width="16"
                 height="16"
-                className="text-gray-400"
+                className="text-green-500"
               >
                 <path
                   strokeLinecap="round"
@@ -75,7 +102,11 @@ const FoodDetail = ({ isDarkMode }) => {
                 />
               </svg>
             </button>
-            <button className="w-8 h-8 flex justify-center items-center bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100">
+            <button
+              className={`w-8 h-8 flex justify-center items-center ${
+                isDarkMode ? "dark:bg-gray-800" : " bg-white"
+              } border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100`}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -84,7 +115,7 @@ const FoodDetail = ({ isDarkMode }) => {
                 stroke="currentColor"
                 width="16"
                 height="16"
-                className="text-gray-400"
+                className="text-green-500"
               >
                 <path
                   strokeLinecap="round"
@@ -212,6 +243,51 @@ const FoodDetail = ({ isDarkMode }) => {
           } p-3 shadow-md shadow-offset-b-4`}
         >
           <LineChart />
+        </div>
+      </div>
+      <div>
+        <h1
+          className={`font-barlow font-semibold text-[25px] py-5 ${
+            isDarkMode ? "text-white" : "dark:text-gray-800"
+          }`}
+        >
+          Customer Reviews
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  ">
+          {cardItems?.map((item, index) => (
+            <div
+              className={`${
+                isDarkMode ? "dark:bg-gray-800" : "bg-white"
+              } rounded-lg px-5 py-3 shadow-md shadow-offset-b-4`}
+              key={index}
+            >
+              <div
+                className={`flex items-center font-barlow  gap-3 ${
+                  isDarkMode ? "text-white" : ""
+                }`}
+              >
+                <img
+                  className="object-cover rounded-full w-[45px] h-[45px]"
+                  src={item?.img}
+                  alt="#"
+                />
+                <div>
+                  <span className="font-semibold">{item?.name}</span>
+                  <p className="text-[13px] opacity-60">1 hours ago</p>
+                </div>
+              </div>
+              <p
+                className={`font-barlow  opacity-55 text-[14px] leading-5 py-3  ${
+                  isDarkMode ? "text-white" : ""
+                }`}
+              >
+                {item?.comment}
+              </p>
+              <div className="text-yellow-500">
+                <Rate allowHalf defaultValue={4.5} />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
