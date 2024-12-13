@@ -9,7 +9,10 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-
+import { SiMastercard } from 'react-icons/si';
+import { MdOutlineMessage } from 'react-icons/md';
+import { FaPhoneAlt } from 'react-icons/fa';
+import { FaToolbox } from 'react-icons/fa';
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -84,12 +87,16 @@ const CustomerDetail = ({ isDarkMode }) => {
   return (
     <div
       className={`min-h-screen p-8 ${
-        isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'
+        isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-800'
       }`}
     >
+      <h2 className="text-[26px] font-bold">Customer Detail</h2>
+      <p className="pt-3 pb-10 text-gray-400">
+        Here your Customer Detail Profile
+      </p>
       <div
         className={`flex items-center justify-between p-6 rounded-lg ${
-          isDarkMode ? 'bg-gray-900' : 'bg-gray-100'
+          isDarkMode ? 'bg-gray-800' : 'bg-gray-100'
         }`}
       >
         <div className="flex items-center space-x-4">
@@ -115,36 +122,53 @@ const CustomerDetail = ({ isDarkMode }) => {
               St. Kings Road 57th, Garden Hills, Chelsea - London
             </p>
             <div className="flex space-x-4 mt-4">
-              <a
-                href="mailto:eren.yeager@mail.co.id"
-                className={isDarkMode ? 'text-blue-400' : 'text-blue-600'}
-              >
-                eren.yeager@mail.co.id
-              </a>
-              <a
-                href="tel:+0123456789"
-                className={isDarkMode ? 'text-blue-400' : 'text-blue-600'}
-              >
-                +012 345 6789
-              </a>
+              <span className="flex items-center space-x-3">
+                <MdOutlineMessage className="text-blue-500" />
+                <a
+                  href="mailto:eren.yeager@mail.co.id"
+                  className={isDarkMode ? 'text-blue-400' : 'text-blue-600'}
+                >
+                  eren.yeager@mail.co.id
+                </a>
+              </span>
+              <span className="flex items-center space-x-4">
+                <FaPhoneAlt className="text-green-500" />
+                <a
+                  href="tel:+0123456789"
+                  className={isDarkMode ? 'text-blue-400' : 'text-blue-600'}
+                >
+                  +012 345 6789
+                </a>
+              </span>
+              <span className="flex items-center space-x-4">
+                <FaToolbox className="text-red-500" />
+                <a
+                  href="tel:+0123456789"
+                  className={isDarkMode ? 'text-blue-400' : 'text-blue-600'}
+                >
+                  Highspeed Studios
+                </a>
+              </span>
             </div>
           </div>
         </div>
 
-        <div className="bg-green-700 p-6 rounded-lg w-64">
+        <div
+          className={` p-6 rounded-lg w-64 ${
+            isDarkMode
+              ? 'bg-green-600 text-gray-200'
+              : 'bg-green-600 text-gray-100'
+          }`}
+        >
           <h2 className="text-lg text-gray-300">Your Balance</h2>
           <p className="text-3xl font-semibold mt-2">$ 9,425</p>
           <div className="text-gray-300 mt-4">
             <p>2451 **** **** ****</p>
             <p>02/21</p>
           </div>
-          <div className="flex items-center mt-4">
+          <div className="flex items-center mt-4 justify-between">
             <span className="text-gray-300">Mastercard</span>
-            <img
-              src="path_to_mastercard_icon.png"
-              alt="Mastercard"
-              className="w-10 ml-2"
-            />
+            <SiMastercard className="text-[40px]" />
           </div>
         </div>
       </div>
@@ -194,7 +218,7 @@ const CustomerDetail = ({ isDarkMode }) => {
         <div>
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-semibold">Most Liked Food</h2>
-            <div className="flex space-x-2">
+            <div className="flex space-x-2 bg-gray-800">
               <button
                 className={`px-4 py-2 rounded-lg text-sm ${
                   isDarkMode ? 'bg-gray-700' : 'bg-gray-300'
