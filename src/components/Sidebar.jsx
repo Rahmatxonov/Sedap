@@ -18,7 +18,7 @@ const Sidebar = ({ isDarkMode }) => {
   return (
     <div
       className={`h-screen overflow-y-scroll w-[320px] fixed top-0 left-0 ${
-        isDarkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-800'
+        isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'
       } shadow-lg flex flex-col justify-between`}
     >
       <div className="p-6">
@@ -32,7 +32,7 @@ const Sidebar = ({ isDarkMode }) => {
             `flex items-center p-2 rounded-lg ${
               isActive
                 ? 'text-green-500 bg-green-100 font-semibold'
-                : 'text-gray-600 hover:text-green-500 hover:bg-green-100'
+                : 'text-gray-400 hover:text-green-500 hover:bg-green-100'
             }`
           }
         >
@@ -44,7 +44,7 @@ const Sidebar = ({ isDarkMode }) => {
             `flex items-center p-2 rounded-lg ${
               isActive
                 ? 'text-green-500 bg-green-100 font-semibold'
-                : 'text-gray-600 hover:text-green-500 hover:bg-green-100'
+                : 'text-gray-400 hover:text-green-500 hover:bg-green-100'
             }`
           }
         >
@@ -57,7 +57,7 @@ const Sidebar = ({ isDarkMode }) => {
             `flex items-center p-2 rounded-lg ${
               isActive
                 ? 'text-green-500 bg-green-100 font-semibold'
-                : 'text-gray-600 hover:text-green-500 hover:bg-green-100'
+                : 'text-gray-400 hover:text-green-500 hover:bg-green-100'
             }`
           }
         >
@@ -70,7 +70,7 @@ const Sidebar = ({ isDarkMode }) => {
             `flex items-center p-2 rounded-lg ${
               isActive
                 ? 'text-green-500 bg-green-100 font-semibold'
-                : 'text-gray-600 hover:text-green-500 hover:bg-green-100'
+                : 'text-gray-400 hover:text-green-500 hover:bg-green-100'
             }`
           }
         >
@@ -83,7 +83,7 @@ const Sidebar = ({ isDarkMode }) => {
             `flex items-center p-2 rounded-lg ${
               isActive
                 ? 'text-green-500 bg-green-100 font-semibold'
-                : 'text-gray-600 hover:text-green-500 hover:bg-green-100'
+                : 'text-gray-400 hover:text-green-500 hover:bg-green-100'
             }`
           }
         >
@@ -96,7 +96,7 @@ const Sidebar = ({ isDarkMode }) => {
             `flex items-center p-2 rounded-lg ${
               isActive
                 ? 'text-green-500 bg-green-100 font-semibold'
-                : 'text-gray-600 hover:text-green-500 hover:bg-green-100'
+                : 'text-gray-400 hover:text-green-500 hover:bg-green-100'
             }`
           }
         >
@@ -109,7 +109,7 @@ const Sidebar = ({ isDarkMode }) => {
             `flex items-center p-2 rounded-lg ${
               isActive
                 ? 'text-green-500 bg-green-100 font-semibold'
-                : 'text-gray-600 hover:text-green-500 hover:bg-green-100'
+                : 'text-gray-400 hover:text-green-500 hover:bg-green-100'
             }`
           }
         >
@@ -122,7 +122,7 @@ const Sidebar = ({ isDarkMode }) => {
             `flex items-center p-2 rounded-lg ${
               isActive
                 ? 'text-green-500 bg-green-100 font-semibold'
-                : 'text-gray-600 hover:text-green-500 hover:bg-green-100'
+                : 'text-gray-400 hover:text-green-500 hover:bg-green-100'
             }`
           }
         >
@@ -135,7 +135,7 @@ const Sidebar = ({ isDarkMode }) => {
             `flex items-center p-2 rounded-lg ${
               isActive
                 ? 'text-green-500 bg-green-100 font-semibold'
-                : 'text-gray-600 hover:text-green-500 hover:bg-green-100'
+                : 'text-gray-400 hover:text-green-500 hover:bg-green-100'
             }`
           }
         >
@@ -148,7 +148,7 @@ const Sidebar = ({ isDarkMode }) => {
             `flex items-center p-2 rounded-lg ${
               isActive
                 ? 'text-green-500 bg-green-100 font-semibold'
-                : 'text-gray-600 hover:text-green-500 hover:bg-green-100'
+                : 'text-gray-400 hover:text-green-500 hover:bg-green-100'
             }`
           }
         >
@@ -161,7 +161,7 @@ const Sidebar = ({ isDarkMode }) => {
             `flex items-center p-2 rounded-lg ${
               isActive
                 ? 'text-green-500 bg-green-100 font-semibold'
-                : 'text-gray-600 hover:text-green-500 hover:bg-green-100'
+                : 'text-gray-400 hover:text-green-500 hover:bg-green-100'
             }`
           }
         >
@@ -174,7 +174,7 @@ const Sidebar = ({ isDarkMode }) => {
             `flex items-center p-2 rounded-lg ${
               isActive
                 ? 'text-green-500 bg-green-100 font-semibold'
-                : 'text-gray-600 hover:text-green-500 hover:bg-green-100'
+                : 'text-gray-400 hover:text-green-500 hover:bg-green-100'
             }`
           }
         >
